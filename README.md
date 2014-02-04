@@ -26,7 +26,7 @@ place them in a folder called 'bitmaps'. If a distortion correction
 file is specified, an additional set of patterns will be calculated which
 include both aberration and distortion corrections. 
 
-The distortion correction it used to compensate for phase distortion 
+The distortion correction is used to compensate for phase distortion 
 due to the SLM surface not being perfectly flat. An example 'distortion.bmp' 
 pattern is included, but in practice each SLM module should have its own 
 pattern provided by the manufacturer to be used here. The distortion-
