@@ -21,29 +21,6 @@ import random
 import PIL
 import csv
 import os
-
-
-    
-def save_details(filename, details_list, data_list):
-    """ Save calculation details to a CSV file. 
-    
-    Parameters
-    ----------
-    
-    filename : string
-        Filename (without extension). 
-        
-    details_list : list
-        List of strings for column headings.        
-        
-    data_list : list
-        List of values for column data.
-        
-    """
-    
-    csv_file = csv.writer(open(filename + '.csv', 'wb'), delimiter=',')    
-    csv_file.writerow(details_list)
-    csv_file.writerow(data_list)
     
     
 def save(filename, np_array, png=False): 
@@ -134,7 +111,6 @@ def diff_theta(theta_1, d_f, d_s, f, n_s, n_a=1, d_w=0, n_w=1):
     
     ret : float
         Value of derivative of theta with respect to theta_1.
-    
     """
     
     return ((d_w*n_a*np.sin(theta_1)/np.sqrt(-n_a**2*np.sin(theta_1)**2 + n_w**2) + 
@@ -191,9 +167,8 @@ def newton_theta(theta, d_f, d_s, f, n_s, n_a=1, d_w=0, n_w=1):
     
     ret : float
         Numerical approximation of the value of theta_1 for a given theta.
-        
-        """
-     
+    """
+    
     def g_th1(theta_1, d_s, d_w): #separating out a large term from F
         return d_s*n_a*np.sin(theta_1)/np.sqrt(n_s**2 - n_a**2*np.sin(theta_1)**2) + \
                 d_w*n_a*np.sin(theta_1)/np.sqrt(n_w**2 - n_a**2*np.sin(theta_1)**2)
@@ -318,7 +293,6 @@ def DeltaPHI(wavelength, theta, d_s, d_f, f, n_s, n_a=1, d_w=0, n_w=1, wrap=Fals
     
     ret : float
         Value of the optical path length difference (in radians) for the given theta.
-        
     """
     
     ans = -( PHI(theta, d_s, d_f, f, n_s, n_a, d_w, n_w) - PHI(0, d_s, d_f, f, n_s, n_a, d_w, n_w) )
@@ -372,7 +346,6 @@ def optimize_d_f(wavelength, d_s, f, alpha, n_s, n_a=1, d_w=0, n_w=1):
     
     ret : float
         The value of d_f optimized for a given d_s.
-    
     """
     
     d_f = d_s # initial guess
@@ -480,7 +453,6 @@ def calculate_phasemap(px, nx, ny, wavelength, d_s, f, alpha, n_s, n_a=1, d_w=0,
         2D numpy array of 8-bit integers containing the combined aberration and 
         distortion correction phase shifts, with the range of 0-2pi represented 
         by the integer range 0-255. Intended for saving as a grayscale bitmap.
-    
     """
     
     
@@ -725,7 +697,6 @@ class Slit(object):
     
         orientation : str
             Sets slit to horizontal or vertical orientation. Expects 'x' or 'y'.
-            
         """        
         
         self.width = width
@@ -734,7 +705,9 @@ class Slit(object):
 
 
 def create_bitmaps(lens, slm, sample, window=None, slit=None):
-    """
+    """ The main function of the script, which initiates the calculation
+    of hologram bitmaps based on the input conditions.
+    
     Parameters
     ----------
     
@@ -752,7 +725,6 @@ def create_bitmaps(lens, slm, sample, window=None, slit=None):
 
     slit : `Slit` instance
         Carries details about slit beamshaping, if applicable.
-        
     """       
     
     if not window:
