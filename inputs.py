@@ -1,5 +1,18 @@
-""" Example implementation of aberration and distortion correction, including
-irradiation through window and simulated beam shaping. """
+""" 
+This package produces aberration-correction holograms for use with a digital 
+spatial light modulator (SLM), for the purpose of achieving uniform focal 
+conditions independent of focal depth during femtosecond laser irradiation
+within transparent samples. Supports irradiation through an additional 
+window layer, as in the case of a sample within a high temperature stage.
+
+Details of the derivation and experimental implementation are provided in 
+
+    Adam Stone et al. "Multi-layer aberration correction for depth-independent 
+    3D crystal growth in glass by femtosecond laser heating." JOSA B, Vol. 30, 
+    Issue 5, pp. 1234-1240 (2013). <http://dx.doi.org/10.1364/JOSAB.30.001234>
+    
+This script shows an example implementation of aberration and distortion correction, 
+including irradiation through window and simulated slit beamshaping. """
 
 from aberration import ObjectiveLens, SLM, Sample, Window, Slit, create_bitmaps
 
