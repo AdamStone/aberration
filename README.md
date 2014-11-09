@@ -70,8 +70,8 @@ Example Outputs
 
 An example aberration-correction pattern with slit beamshaping before applying distortion correction:
 
-[Example aberration correction hologram](/example output/aberration_corrected/window1000_depth1200_z543.bmp)
+[Example aberration correction hologram](/aberration-example.png)
 
 After applying an additional distortion correction:
 
-[Example aberration correction hologram with distortion correction](/example output/aberration_distortion_corrected/window1000_depth1200_z543.bmp)
+[Example aberration correction hologram with distortion correction](/aberration-distortion-example.png)
