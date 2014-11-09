@@ -64,3 +64,14 @@ implementation are provided in
     Adam Stone et al. "Multi-layer aberration correction for depth-independent 
     3D crystal growth in glass by femtosecond laser heating." JOSA B, Vol. 30, 
     Issue 5, pp. 1234-1240 (2013). <http://dx.doi.org/10.1364/JOSAB.30.001234>
+
+Example Outputs
+------------
+
+An example aberration-correction pattern with slit beamshaping before applying distortion correction:
+
+[Example aberration correction hologram](/example output/aberration_corrected/window1000_depth1200_z543.bmp)
+
+After applying an additional distortion correction:
+
+[Example aberration correction hologram with distortion correction](/example output/aberration_distortion_corrected/window1000_depth1200_z543.bmp)
